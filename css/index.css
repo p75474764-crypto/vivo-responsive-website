@@ -1,0 +1,369 @@
+ /* 定义全局变量 */
+ :root {
+   --vivo-blue: #1976d2;
+   --vivo-cyan: #00e5ff;
+   --vivo-purple: #7b1fa2;
+   --vivo-dark: #121212;
+   --vivo-card-bg: #1e1e1e;
+   --neon-glow: 0 0 10px rgba(0, 229, 255, 0.7),
+     0 0 20px rgba(0, 229, 255, 0.5),
+     0 0 30px rgba(0, 229, 255, 0.3);
+ }
+
+ body {
+   font-family: 'Montserrat', sans-serif;
+   background-color: var(--vivo-dark);
+   color: #fff;
+   overflow-x: hidden;
+ }
+
+ /* 导航栏 */
+ .navbar {
+   background-color: rgba(18, 18, 18, 0.6) !important;
+   backdrop-filter: blur(10px);
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   padding: 15px 0;
+ }
+
+ .icons a {
+   font-size: 1.4rem;
+   color: rgba(255, 255, 255, 0.9);
+   padding: 0 10px;
+ }
+
+ .icons a:hover {
+   text-shadow: var(--neon-glow);
+   color: var(--vivo-cyan);
+ }
+
+ .nav-link {
+   position: relative;
+   color: rgba(255, 255, 255, 0.9);
+   padding: 10px 12px;
+   margin-right: 20px;
+
+ }
+
+ .nav-link:hover {
+   text-shadow: var(--neon-glow);
+ }
+
+ .nav-link::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 0;
+   height: 2px;
+   background: linear-gradient(90deg, var(--vivo-cyan), var(--vivo-blue));
+   transition: width 0.3s ease-in-out;
+ }
+
+ .nav-link:hover::after {
+   width: 100%;
+ }
+
+ .navbar-brand,
+ .navbar-brand:hover {
+   font-size: 28px;
+   font-weight: 700;
+   background: linear-gradient(45deg, var(--vivo-cyan), var(--vivo-blue));
+   /* 文字裁剪 */
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-shadow: var(--neon-glow);
+ }
+
+
+
+
+
+ /* 轮播图制作 */
+ .banner {
+   width: 100%;
+   height: 50vw;
+   mask-image: linear-gradient(rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
+   -webkit-mask-image: linear-gradient(rgb(0, 0, 0) 80%, rgba(0, 0, 0, 0) 100%);
+   margin-top: 50px;
+ }
+
+ .banner .carousel-item img {
+   width: 100%;
+   height: 50vw;
+ }
+
+ .carousel-caption {
+   bottom: 15rem;
+ }
+
+ .carousel-indicators {
+   margin-bottom: 14rem;
+ }
+
+
+
+
+ /* 热门产品 */
+ .hot-product .info {
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ /* 卡片模块 */
+ .card {
+   background-color: var(--vivo-card-bg);
+   border-radius: 15px;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.3s ease-in-out;
+   overflow: hidden;
+ }
+
+ .card:hover {
+   transform: translateY(-10px);
+   border-color: rgba(0, 229, 255, 0.3);
+ }
+
+ .card .card-img {
+   padding: 30px;
+   background-color: #292929;
+ }
+
+ .card .card-img img {
+
+   animation: move 5s ease-in-out infinite;
+ }
+
+ @keyframes move {
+   0% {
+     transform: translateY(0);
+   }
+
+   50% {
+     transform: translateY(-10px);
+   }
+
+   100% {
+     transform: translateY(0px);
+   }
+ }
+
+ .card-text {
+   color: rgba(255, 255, 255, 0.7);
+   font-size: 0.9rem;
+ }
+
+ .price {
+   color: var(--vivo-cyan);
+   font-size: 1.5rem;
+   font-weight: 700;
+ }
+
+ .card-body .btn {
+   width: 100%;
+   border: 2px solid var(--vivo-cyan);
+   color: var(--vivo-cyan);
+   border-radius: 30px;
+   background: none;
+   padding: 10px 0;
+   font-weight: 600;
+   transition: all 0.3s ease-in-out;
+ }
+
+ .card-body .btn:hover {
+   box-shadow: var(--neon-glow);
+ }
+
+
+
+
+
+
+ /* 未来科技模块 */
+ .future-tech {
+   position: relative;
+   background: url(../img/bg1.avif) no-repeat;
+   background-position: center;
+   background-size: cover;
+   /* 背景图片固定定位 */
+   background-attachment: fixed;
+
+ }
+
+ .future-tech::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.8);
+ }
+
+ .future-icon {
+   font-size: 3rem;
+   color: var(--vivo-cyan);
+   text-shadow: var(--neon-glow);
+   margin-top: 20px;
+ }
+
+ .future-title {
+   font-size: 1.5rem;
+   font-weight: 600;
+   margin-bottom: 15px;
+   color: #fff;
+ }
+
+ .future-desc {
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+
+
+
+
+ /* 底部导航部分 */
+ .footer {
+   background-color: #0a0a0a;
+   margin-top: 80px;
+ }
+
+ .footer dt {
+   position: relative;
+   color: #fff;
+   font-size: 1.2rem;
+   font-weight: 600;
+   padding-bottom: 10px;
+   margin-bottom: 25px;
+ }
+
+ .footer dt::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 40px;
+   height: 2px;
+   background: linear-gradient(90deg, var(--vivo-cyan), var(--vivo-blue));
+ }
+
+
+ .footer dd>a {
+   /* 块级元素才能做变换效果 */
+   display: block;
+   text-decoration: none;
+   color: rgba(255, 255, 255, 0.7);
+   font-size: 0.9rem;
+   margin-bottom: 10px;
+
+   transition: all 0.3s ease-in-out;
+ }
+
+ .footer dd>a:hover {
+
+   text-shadow: var(--neon-glow);
+   color: var(--vivo-cyan);
+   transform: translateX(20px);
+ }
+
+ .footer .icons {
+   display: flex;
+ }
+
+ .footer .icons a {
+   text-decoration: none;
+   width: 40px;
+   height: 40px;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 50%;
+   text-align: center;
+   line-height: 40px;
+   color: #fff;
+   margin-right: 10px;
+   transition: all 0.3s ease;
+
+ }
+
+ .footer .icons a:hover {
+   box-shadow: 0 0 10px 2px var(--vivo-cyan);
+   color: #fff;
+   background: linear-gradient(45deg, var(--vivo-blue), var(--vivo-cyan));
+   transform: translateY(-3px);
+ }
+
+ .footer .news {
+   font-size: 0.9rem;
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ .form-control::placeholder {
+   color: rgba(255, 255, 255, 0.7);
+ }
+
+ .btn-outline-secondary {
+   background: linear-gradient(45deg, var(--vivo-cyan), var(--vivo-blue));
+   border: none;
+   color: #fff;
+   border-radius: 30px;
+   padding: 12px 30px;
+   transition: all 0.3s ease;
+ }
+
+ .btn-outline-secondary:hover {
+   box-shadow: var(--neon-glow);
+   transform: translateY(-3px);
+ }
+
+ .copy-right p {
+   font-size: 0.8rem;
+   color: rgba(255, 255, 255, 0.7);
+   border-top: 1px solid #000;
+ }
+
+ /* 媒体查询  */
+ @media screen and (max-width: 768px) {
+   .navbar {
+     padding: 5px;
+   }
+
+   .carousel-caption,
+   .carousel-indicators {
+     display: none;
+   }
+ }
+
+ @media screen and (max-width: 992px) {
+   .carousel-caption {
+     bottom: 8rem;
+   }
+
+   .carousel-indicators {
+     margin-bottom: 8rem;
+   }
+
+   .banner {
+     margin-top: 80px;
+   }
+ }
+
+
+ /* 自定义滚动条 */
+ /* 滚动条设置宽度和高度 */
+ ::-webkit-scrollbar {
+   width: 12px;
+ }
+
+ /* 设置轨道背景色, 圆角等 */
+ ::-webkit-scrollbar-track {
+   background: var(--vivo-dark);
+ }
+
+ /* 设置滑块样式 */
+ ::-webkit-scrollbar-thumb {
+   background: linear-gradient(var(--vivo-blue), var(--vivo-cyan));
+   border-radius: 10px;
+ }
+
+ /* 鼠标经过滑块 */
+ ::-webkit-scrollbar-thumb:hover {
+   background: linear-gradient(var(--vivo-cyan), var(--vivo-blue));
+ }
